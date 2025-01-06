@@ -1,8 +1,11 @@
-
+import { Title, Wrapper } from "./sApp";
 
 function App() {
-
-    return null;
+    return (
+        <Wrapper>
+            <Title>Movies Tinder</Title>
+        </Wrapper>
+    );
 }
 
 export default App;
