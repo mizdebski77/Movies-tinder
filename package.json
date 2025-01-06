@@ -1,9 +1,9 @@
 {
-    "name": "movies-tider",
+    "name": "movies-tinder",
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "homepage": "https://mizdebski77.github.io/Movies-tinder",
+    "homepage": "https://mizdebski77.github.io/Movies-tinder/",
     "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
