@@ -13,7 +13,7 @@ html {
   }
   
 body {
-    background: #dee3e0;
+    background: #fff;
     font-family: 'Playfair Display', serif;
     margin: 0;
 }`;
