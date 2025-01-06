@@ -1,8 +1,25 @@
 import { useState } from "react";
-import { Wrapper } from "./styledSwiper";
+import {
+    Button,
+    ButtonContainer,
+    Card,
+    CardImage,
+    CardTitle,
+    CardWrapper,
+    Description,
+    FinalScreen,
+    FinalText,
+    Rating,
+    Wrapper,
+} from "./styledSwiper";
 import { mockMovies } from "../../common/mockMovies";
 import { notifyBackend } from "../../core/backend";
 import { useSwipeable } from "react-swipeable";
+import { FcRating } from "react-icons/fc";
+import { CgClose } from "react-icons/cg";
+import { GiCheckMark } from "react-icons/gi";
+import { BiRestaurant } from "react-icons/bi";
+import { MdRestartAlt } from "react-icons/md";
 
 export const Swiper = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,17 +66,39 @@ export const Swiper = () => {
     return (
         <Wrapper>
             {error && <p style={{ color: "red" }}>{error}</p>}
-            <CardWrapper>
-                <Card animation={animation}>
-                    <Title>{currentMovie.title}</Title>
-                    <span>Rating: {currentMovie.rating}/10</span>
-                    <MovieImage
-                        src={currentMovie.imageURL}
-                        alt={currentMovie.title}
-                    />
-                    <p>{currentMovie.summary}</p>
-                </Card>
-            </CardWrapper>
+            {currentMovie ? (
+                <>
+                    <CardWrapper>
+                        <Card animation={animation}>
+                            <CardTitle>{currentMovie.title}</CardTitle>
+                            <Rating>
+                                <FcRating /> {currentMovie.rating}/10
+                            </Rating>
+                            <CardImage
+                                src={currentMovie.imageURL}
+                                alt={currentMovie.title}
+                            />
+                            <Description>{currentMovie.summary}</Description>
+                        </Card>
+                    </CardWrapper>
+
+                    <ButtonContainer>
+                        <Button onClick={() => handleSwipe("left")}>
+                            <CgClose />
+                        </Button>
+                        <Button accept onClick={() => handleSwipe("right")}>
+                            <GiCheckMark />
+                        </Button>
+                    </ButtonContainer>
+                </>
+            ) : (
+                <FinalScreen>
+                    <FinalText>You've rated all the movies!</FinalText>
+                    <Button onClick={() => setCurrentIndex(0)}>
+                        <MdRestartAlt />
+                    </Button>
+                </FinalScreen>
+            )}
         </Wrapper>
     );
 };
