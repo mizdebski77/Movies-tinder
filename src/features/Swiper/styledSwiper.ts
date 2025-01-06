@@ -3,12 +3,23 @@ import { fadeIn, slideOutLeft, slideOutRight } from '../../common/animations';
 import { theme } from '../../core/StyledComponents/theme';
 
 export const Wrapper = styled.div`
-    
+    padding: 120px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: ${theme.breakPoints.mobileMax}px) {
+        padding: 20px;
+    };
 `;
 
 export const CardWrapper = styled.div`
     min-height: 840px;
     overflow: hidden;
+
+    @media (max-width: ${theme.breakPoints.mobileMax}px) {
+        min-height: 680px;
+    };
 `;
 
 export const Card = styled.div<{ animation?: string }>`
@@ -20,7 +31,6 @@ export const Card = styled.div<{ animation?: string }>`
     background-color: ${theme.palette.mainColor};
     text-align: center;
     margin-bottom: 20px;
-
     cursor: pointer;
     display: grid;
     align-items: center;
@@ -41,6 +51,10 @@ export const CardTitle = styled.h2`
     font-size: 32px;
     color: ${theme.palette.secondColor};
     margin: 0;
+
+    @media (max-width: ${theme.breakPoints.mobileMax}px) {
+        font-size: 28px;
+    };
 `;
 
 export const Rating = styled.span`
@@ -50,6 +64,10 @@ export const Rating = styled.span`
     justify-content: center;
     align-items: center;
     gap: 12px;
+
+    @media (max-width: ${theme.breakPoints.mobileMax}px) {
+        font-size: 18px;
+    };
 `;
 
 export const CardImage = styled.img`
@@ -60,6 +78,10 @@ export const CardImage = styled.img`
     margin-bottom: 15px;
     object-fit: cover;
     box-shadow: 0 0 10px white;
+
+    @media (max-width: ${theme.breakPoints.mobileMax}px) {
+        max-width: 200px;
+    };
 `;
 
 export const FinalScreen = styled.div`
@@ -71,6 +93,10 @@ export const Description = styled.p`
     color: white;
     text-align: justify;
     font-weight: normal;
+
+    @media (max-width: ${theme.breakPoints.mobileMax}px) {
+        font-size: 16px;
+    };
 `;
 
 export const ButtonContainer = styled.div`
@@ -95,7 +121,11 @@ export const Button = styled.button<{ accept?: boolean }>`
 
     &:hover {
         opacity: 0.7;
-    }
+    };
+
+    @media (max-width: ${theme.breakPoints.mobileMax}px) {
+        font-size: 24px;
+    };
 `;
 
 export const FinalText = styled.h3`

@@ -6,7 +6,7 @@ export const theme = {
     },
 
     breakPoints: {
-
+        mobileMax: '800',
 
     }
 };
