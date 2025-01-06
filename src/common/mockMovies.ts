@@ -9,15 +9,6 @@ export const mockMovies = [
         rating: 8.4,
     },
     {
-        id: "2",
-        imageURL:
-            "https://upload.wikimedia.org/wikipedia/en/a/a2/Star_Wars_The_Force_Awakens_Theatrical_Poster.jpg",
-        title: "Star Wars: Episode VII - The Force Awakens",
-        summary:
-            "As a new threat to the galaxy rises, Rey, a desert scavenger, and Finn, a former stormtrooper, must join Han Solo.",
-        rating: 7.9,
-    },
-    {
         id: "3",
         imageURL: "https://i.ebayimg.com/images/g/LTQAAOSw~gxfU1Rd/s-l1200.jpg",
         title: "Inception",
