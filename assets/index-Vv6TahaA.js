@@ -182,7 +182,7 @@ html {
   }
   
 body {
-    background: #dee3e0;
+    background: #fff;
     font-family: 'Playfair Display', serif;
     margin: 0;
 }`;qp.createRoot(document.getElementById("root")).render(ve.jsx(gt.StrictMode,{children:ve.jsxs(Zh,{theme:It,children:[ve.jsx(Am,{}),ve.jsx(Fm,{})]})}));
