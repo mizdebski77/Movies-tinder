@@ -1,6 +1,5 @@
 
 import { createGlobalStyle } from "styled-components";
-import { theme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
 html {
@@ -14,7 +13,7 @@ html {
   }
   
 body {
-    background: ${theme.palette.bgColor};
+    background: #dee3e0;
     font-family: 'Playfair Display', serif;
     margin: 0;
 }`;
