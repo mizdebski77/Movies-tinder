@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CardWrapper = styled.div`
-    min-height: 800px;
+    min-height: 840px;
     overflow: hidden;
 `;
 
@@ -70,6 +70,7 @@ export const Description = styled.p`
     font-size: 20px;
     color: white;
     text-align: justify;
+    font-weight: normal;
 `;
 
 export const ButtonContainer = styled.div`

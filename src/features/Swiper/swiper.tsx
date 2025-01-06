@@ -18,7 +18,6 @@ import { useSwipeable } from "react-swipeable";
 import { FcRating } from "react-icons/fc";
 import { CgClose } from "react-icons/cg";
 import { GiCheckMark } from "react-icons/gi";
-import { BiRestaurant } from "react-icons/bi";
 import { MdRestartAlt } from "react-icons/md";
 
 export const Swiper = () => {
@@ -48,27 +47,27 @@ export const Swiper = () => {
         }
     };
 
+    const handleSwipe = (direction: "left" | "right") => {
+        if (currentMovie) {
+            const decision = direction === "right" ? "accept" : "reject";
+            notifyBackendHandler(currentMovie.id, decision);
+            setAnimation(direction);
+            setTimeout(nextMovie, 500);
+        }
+    };
+
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => handleSwipe("left"),
         onSwipedRight: () => handleSwipe("right"),
         trackMouse: true,
     });
 
-    const handleSwipe = (direction: "left" | "right") => {
-        if (currentMovie) {
-            const decision = direction === "right" ? "accept" : "reject";
-            notifyBackend(currentMovie.id, decision);
-            setAnimation(direction);
-            setTimeout(nextMovie, 500);
-        }
-    };
-
     return (
-        <Wrapper>
-            {error && <p style={{ color: "red" }}>{error}</p>}
+        <Wrapper {...swipeHandlers}>
             {currentMovie ? (
                 <>
                     <CardWrapper>
+                        {error && <p style={{ color: "red" }}>{error}</p>}
                         <Card animation={animation}>
                             <CardTitle>{currentMovie.title}</CardTitle>
                             <Rating>
