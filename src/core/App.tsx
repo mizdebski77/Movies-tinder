@@ -1,10 +1,9 @@
 import { Swiper } from "../features/Swiper/swiper";
-import { Title, Wrapper } from "./styledApp";
+import { Wrapper } from "./styledApp";
 
 function App() {
     return (
         <Wrapper>
-            <Title>Movies Tinder</Title>
             <Swiper />
         </Wrapper>
     );
