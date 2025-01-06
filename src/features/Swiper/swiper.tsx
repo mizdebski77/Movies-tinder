@@ -1,5 +1,4 @@
-import React from 'react';
-import { Wrapper } from './sSwiper';
+import { Wrapper } from './styledSwiper';
 
 export const Swiper = () => {
   return (

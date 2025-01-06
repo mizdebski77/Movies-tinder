@@ -1,4 +1,4 @@
-import { Title, Wrapper } from "./sApp";
+import { Title, Wrapper } from "./styledApp";
 
 function App() {
     return (
